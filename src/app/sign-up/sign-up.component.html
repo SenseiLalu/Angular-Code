@@ -1,0 +1,41 @@
+<div class="container" id="container">
+	<div class="form-container sign-in-container">
+		<form action="signup" (ngSubmit)="formSubmit()" >
+			<h1 style="margin-bottom: 15%;">Create Account</h1>
+			
+            <input
+			[(ngModel)]="user.username"
+			name="username"
+			type="text" placeholder="Name" required="required" />
+			<input
+			[(ngModel)]="user.email"
+			name="email"
+			type="email" placeholder="Email" required="required" />
+            <input
+			[(ngModel)]="user.password"
+			name="password"
+			type="password" placeholder="Password" required="required" />
+			<input
+			[(ngModel)]="user.isActive"
+			name="isActive"
+			type="isActive" placeholder="isActive" required="required" />
+			<input
+			[(ngModel)]="user.role"
+			name="role"
+			type="role" placeholder="Role" required="required" />
+
+			
+<br>
+
+            
+			<button type="submit"  style="cursor:pointer;">Sign Up</button>
+		</form>
+	</div>
+	
+</div>
+
+
+
+
+
+

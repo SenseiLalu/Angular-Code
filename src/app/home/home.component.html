@@ -1,0 +1,42 @@
+<mat-sidenav-container class="container">
+	
+	<mat-sidenav #sidebar mode="side" opened>
+	  <app-sidebar></app-sidebar>
+	</mat-sidenav>
+	<mat-sidenav-content>
+	  <div class="content">
+		<div class="toolbar">
+		  <mat-toolbar>
+			<mat-icon (click)="sidebar.toggle()">menu</mat-icon>
+			<span style="font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif; position:relative; left:60px;">Welcome To Task Management</span>
+			
+			<div class="box">
+			  <mat-icon></mat-icon>
+			  <mat-icon></mat-icon>
+			  <div class="logout">
+				
+				<!-- <span style="margin-bottom: 10px;">Logout</span>
+				<mat-icon  *ngIf="loggedIn" (click)="loggedoutUser()">logout</mat-icon> -->
+				
+				<div class="navbar">
+					<span style="font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif; color: white; font-size: medium; padding-top: 40%; line-height: 1;" >Hello, {{fullname }}<h1 style="font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif; color: white; font-size: smaller; padding-left: 30%; padding-bottom: 20%; margin-bottom: 40%;">{{role}}</h1> </span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+					<br>
+					<!-- <h4 style="font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif; color: white;">{{role}}</h4> -->
+					<span style="font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;">Log out</span>
+					<span class="logout-icon material-icons" style="cursor: pointer; padding-left: px;" *ngIf="loggedIn" (click)="loggedoutUser()">logout</span>
+					
+				  </div>
+			  
+			</div>
+			  <!-- <mat-icon>mail_outline</mat-icon> -->
+			</div>
+		  </mat-toolbar>
+		</div>
+		<div class="main">
+			
+		  <router-outlet></router-outlet>
+		  <!-- <img class="img-responsive" src="assets\background image.png"> -->
+		</div>
+	  </div>
+	</mat-sidenav-content>
+  </mat-sidenav-container>

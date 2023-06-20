@@ -1,0 +1,111 @@
+
+<div class="container">
+	<form (ngSubmit)="updateData()" method="put">
+	<div class="button-container">
+		<button type="submit" class="button" style="text-align: center;">Update</button>
+	</div>
+	<h1 class="title" style="font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif; position:relative; right:10px; bottom: 30px; font-weight: bold; color: gray;">Edit Task</h1>
+
+	
+	
+	
+	<div class="grid">
+		<div class="form-group a">
+			<label for="name">Task ID</label>
+			<input
+			[(ngModel)]="data.taskId" [ngModelOptions] = "{standalone: true}"
+			  type="text" disabled >
+		</div>
+
+		<div class="form-group b">
+			<label for="first-name">Title</label>
+			<input
+			[(ngModel)]="data.taskName" [ngModelOptions] = "{standalone: true}"
+			 id="first-name" type="text">
+		</div>
+
+		
+
+
+
+		<div  class="form-group email-group">
+			<label  for="first-name">Assigned To</label>
+			<select
+			[(ngModel)]="data.assignedDto.userId" [ngModelOptions] = "{standalone: true}" name="format"
+			 id="first-name" type="text" style="background-color: white;">
+			 <option *ngFor ="let element of elements" [value]="element.userId">
+				{{element.username}}
+			  </option>
+			</select>
+			<mat-icon style="position:relative;  bottom: 35px; left: 250px;">arrow_drop_down</mat-icon>
+		</div>
+
+
+
+		<div class="form-group phone-group">
+			<label for="first-name">Status</label>
+			<select
+			[(ngModel)]="data.statusId.statusId" [ngModelOptions] = "{standalone: true}" name="format"
+			 id="first-name" type="text" style="background-color: white;" >
+			<option *ngFor ="let element of elements1" [value]="element.statusId">
+	{{element.description}}
+	  </option>
+   </select>
+   <mat-icon style="position:relative;  bottom: 35px; left: 250px;">arrow_drop_down</mat-icon>
+		</div>
+
+		<div class="form-group">
+			<label for="address">Start Date</label>
+			<input id="address" type="date" [(ngModel)]="data.assigenedDate" [ngModelOptions] = "{standalone: true}">
+			
+		</div>
+
+		<div class="form-group">
+			<label for="city">End Date</label>
+			<input 
+		[(ngModel)]="data.deuDate" [ngModelOptions] = "{standalone: true}"
+			id="city" type="date">
+		</div>		
+	</div>
+
+	<div class="checkboxes">
+
+
+	</div>
+
+	
+</form>
+	<br>
+
+	<form (ngSubmit)=" submitTheForm()" method="post">
+	<div class="comments-container">
+		<div class="comment-box">
+		<h2 style="font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif; font-weight: bold; color: gray;">Comments</h2>
+		
+			  <textarea placeholder="Write Comment...."
+			  [(ngModel)]="postComments.comment" [ngModelOptions] = "{standalone: true}"
+			  type="comment"></textarea>
+			  
+			  <button mat-button>
+				<mat-icon color="primary">send</mat-icon>
+			</button>
+			    <!-- <button type="submit">Submit</button> -->
+			</div>
+			  
+			  <form (ngSubmit)="getCommentsbyTask()" method="get"></form>
+		<!-- <h2>Recent Comments</h2> -->
+		<ul class="comment-list">
+			<ul>	
+				<li sty id="bio" *ngFor="let element of commentResources.slice().reverse()"   [value]="element.taskCommentsID">
+					<h4 style="font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif; font-weight: bold; color: gray;">
+						<span style="float: left;">{{element.user.username}} :</span>
+						<span style="float: right; font-size: 10px;">{{element.commentDateAndTime | date:'yyyy-MM-dd'}}</span>
+					  </h4>
+						 <br> {{element.comment}}
+						 <br><br></li>
+			</ul>
+		</ul>
+	  </div>
+	  
+</form>
+</div>

@@ -1,0 +1,58 @@
+mat-sidenav{
+    background-color: rgb(52, 169, 130);
+    width: 230px;
+    height:100%;
+
+}
+mat-sidenav-content{
+    height: 100vh;
+    background-color: #f3f3f3;
+}
+
+.mat-toolbar .mat-icon{
+    margin-left: 15px;
+    color:gray;
+}
+mat-toolbar{
+    justify-content: space-between;
+    background-color: rgb(75, 40, 109);
+    color: white;
+}
+.mat-toolbar .box{
+    margin-top: 15px;
+    margin-bottom: 10px;
+    padding-bottom: 10px;
+}
+
+.mat-toolbar .box .logout{
+    margin-bottom: 15px;
+    margin-right: 25%;
+    justify-content: space-between;
+
+}
+/* CSS for the navbar */
+.navbar {
+    /* background-color: #f8f8f8; */
+    /* padding: 30px; */
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    font-size: small;
+    position:relative; left:60px;
+    
+  }
+
+  .logout-icon {
+    margin-right: 10px;
+    color:gray;
+    
+  }
+  
+  .avatar {
+    vertical-align: middle;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+  }
+
+

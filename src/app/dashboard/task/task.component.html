@@ -1,0 +1,101 @@
+
+<div class="one">
+    <div class="containers">
+        <h1 style="text-align: center;font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif; position:relative; right:467px; top: 60px; font-weight: bold; color: gray;"> TASK DETAILS </h1> </div>
+        <div class="first">
+            <!-- <button mat-raised-button color="primary" routerLink="/home/add-task">Add New Task</button>
+            
+       
+          
+    
+          <mat-form-field style="text-align: left; padding-left: 80%; height: 1%;">
+            <input matInput (keyup)="applyFilter($event)"  placeholder="Filter" >
+          </mat-form-field> -->
+
+          <div class="second">
+            <button style="font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;" mat-raised-button color="primary" routerLink="/home/add-task">ADD NEW</button>
+      
+           &nbsp;&nbsp;&nbsp;
+          <!--  style="text-align: left; padding-left: 80%; height: 1%;"> -->
+        <mat-form-field style="height: 60px;">
+          <input matInput (keyup)="applyFilter($event)"  placeholder="Filter" >
+          </mat-form-field>
+        </div>
+       
+          <div class="example-header">
+        <mat-table #table [dataSource]="dataSource">
+      
+          <!-- Position Column -->
+          <ng-container matColumnDef="Task Id">
+            <mat-header-cell *matHeaderCellDef>Task Id</mat-header-cell>
+            <mat-cell *matCellDef="let element"> {{element.taskId}} </mat-cell>
+          </ng-container>
+      
+          <ng-container matColumnDef="Title">
+            <mat-header-cell *matHeaderCellDef>Title</mat-header-cell>
+            <mat-cell *matCellDef="let element" routerLink="/home/edit-task/{{element.taskId}}" style="cursor: pointer; color: rgb(160, 115, 202);"> {{element.taskName}} </mat-cell>
+          </ng-container>
+      
+          <!-- <ng-container matColumnDef="projectname">
+            <mat-header-cell *matHeaderCellDef>Project Name</mat-header-cell>
+            <mat-cell *matCellDef="let element"> {{element.projectname}} </mat-cell>
+          </ng-container> -->
+  
+          <ng-container matColumnDef="Long Desc">
+            <mat-header-cell *matHeaderCellDef>Long Desc </mat-header-cell>
+            <mat-cell *matCellDef="let element"> {{element.longDescription}} </mat-cell>
+          </ng-container>
+  
+          <ng-container matColumnDef="Assigned Date">
+            <mat-header-cell *matHeaderCellDef>Assigned Date </mat-header-cell>
+            <mat-cell *matCellDef="let element"> {{element.assigenedDate |date}} </mat-cell>
+  
+          </ng-container>
+  
+          <ng-container matColumnDef="Due Date">
+            <mat-header-cell *matHeaderCellDef> Due Date </mat-header-cell>
+            <mat-cell *matCellDef="let element"> {{element.deuDate | date}} </mat-cell>
+          </ng-container>
+  
+          <ng-container matColumnDef="Task Status">
+            <mat-header-cell *matHeaderCellDef>Task Status</mat-header-cell>
+            <mat-cell *matCellDef="let element"> {{element.statusId.description}} </mat-cell>
+          </ng-container>
+    
+          <ng-container matColumnDef="Assigned To">
+            <mat-header-cell *matHeaderCellDef> Assigned To </mat-header-cell>
+            <mat-cell *matCellDef="let element"> {{element.assignedDto.username}} </mat-cell>
+          </ng-container>
+    
+          <ng-container matColumnDef="Created By">
+            <mat-header-cell *matHeaderCellDef> Created By </mat-header-cell>
+            <mat-cell *matCellDef="let element"> {{element.createdBy.username}} </mat-cell>
+          </ng-container>
+  
+          <ng-container matColumnDef="Created On">
+            <mat-header-cell *matHeaderCellDef> Created On </mat-header-cell>
+            <mat-cell *matCellDef="let element"> {{element.createdOn | date}} </mat-cell>
+          </ng-container>
+    
+          <ng-container matColumnDef="Task Category">
+            <mat-header-cell *matHeaderCellDef> Task Category </mat-header-cell>
+            <mat-cell *matCellDef="let element"> {{element.taskCategoryDescription.taskCategoryDescription}} </mat-cell>
+          </ng-container>
+
+          <ng-container matColumnDef="Project">
+            <mat-header-cell *matHeaderCellDef> Project </mat-header-cell>
+            <mat-cell *matCellDef="let element"> {{element.projectName.projectName}} </mat-cell>
+          </ng-container>
+    
+          <mat-header-row *matHeaderRowDef="displayedColumns"></mat-header-row>
+          <mat-row *matRowDef="let row; columns: displayedColumns;"></mat-row>
+        </mat-table>
+        <mat-paginator [pageSizeOptions]="[5, 10, 25, 100]" [pageSize]="5" [pageIndex]="0" showFirstLastButtons></mat-paginator>
+       
+
+      </div>
+
+     
+      
+      </div>
+      

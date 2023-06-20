@@ -1,0 +1,48 @@
+@import '~@angular/material/prebuilt-themes/indigo-pink.css';
+.one{
+    /* background-color: #f2f3f7;; */
+    height: 100%;
+    /* padding-top: 2%; */
+}
+.example-container {
+    display: flex;
+    flex-direction: column;
+    min-width: 300px;
+    
+  }
+  .example-header {
+    min-height: 64px;
+    padding: 8px 24px 0;
+    
+  }
+  
+  .mat-form-field {
+    font-size: 14px;
+    width: 100%;
+    
+  }
+  
+  .mat-table {
+    overflow: auto;
+    max-height: 500px;
+    
+
+  }
+.first button{
+    /* margin-left: 79%; */
+    width: 30%;
+    height: 40px;
+    background-color:   #008be1;
+    font-family:  Raleway, sans-serif;;
+}
+.second{
+  margin-left: 67%;
+  
+}
+.second button{
+  box-shadow: 5px 5px 10px grey;
+}
+
+/* .one .containers h1{
+  
+} */

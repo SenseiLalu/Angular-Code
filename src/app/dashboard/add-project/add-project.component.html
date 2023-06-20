@@ -1,0 +1,43 @@
+
+<div class="container">
+
+	<h1  class="title" style="font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;font-weight: bold; color: gray;" >Add Project</h1>
+<form (ngSubmit)="onSubmit()">
+	<div class="grid">
+		<div class="form-group a">
+			<label for="name">Project Name</label>
+			<input
+			[(ngModel)]="projectData.projectName"
+			 name="title" type="text">
+		</div>
+<br>
+		<div class="form-group b">
+      
+		</div>
+
+		<form (ngSubmit)="onSubmit()">
+
+		<div class="form-group email-group" >
+			<label for="name">IsActive</label>
+			<select
+			[(ngModel)]="projectData.active"
+			 name="title" type="text" style="background-color: white;">
+			 <option [ngValue]="true">select</option>
+			 <option [ngValue]="true">Yes</option>
+            <option [ngValue]="true">No</option>
+			</select>
+		</div>
+	</form>
+		<div class="form-group phone-group">
+     
+    </div>
+		</div>
+
+		
+
+	<div class="checkboxes">
+
+    <button  type="submit" class="button">Save</button>
+	</div>
+</form>
+</div>

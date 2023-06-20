@@ -1,0 +1,47 @@
+<div class="one">
+    <div class="containers">
+        <h1 style="font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif; position:relative; left:24px; top: 80px; font-weight: bold; color: gray;"> ASSIGNED PROJECT DETAILS </h1>  </div>
+        <div class="first">
+          <div class="second" >
+            <button style="text-align: center;font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif; box-shadow: 5px 5px 10px grey;" mat-raised-button color="primary" routerLink="/home/assigne-project">NEW</button>
+            
+            &nbsp; &nbsp;
+          <mat-form-field style="  height: 60px;">
+            <input matInput (keyup)="applyFilter($event)"  placeholder="Filter" >
+          </mat-form-field>
+        </div>
+          <!-- <button mat-raised-button color="primary" routerLink="/home/add-project">Add New Projects</button><br><br>
+        <div class="example-header"><br>
+  
+          <div class="first">
+            <button mat-raised-button color="primary" routerLink="/home/assigne-project">Assigne Project</button><br><br>
+          
+    
+          <mat-form-field style="text-align: left; padding-left: 80%; height: 1%;">
+            <input matInput (keyup)="applyFilter($event)"  placeholder="Filter" >
+          </mat-form-field>
+        -->
+        <div class="example-header"><br>
+        <mat-table #table [dataSource]="dataSource" class="mat-elevation-z8">
+      
+          <!-- Position Column -->
+          <ng-container matColumnDef="Project Name">
+            <mat-header-cell *matHeaderCellDef> Project Name </mat-header-cell>
+            <mat-cell *matCellDef="let element"> {{element.projectName}} </mat-cell>
+          </ng-container>
+      
+          <!-- Name Column -->
+          <ng-container matColumnDef="User">
+            <mat-header-cell *matHeaderCellDef> User</mat-header-cell>
+            <mat-cell *matCellDef="let element"> {{element.username}} </mat-cell>
+          </ng-container>
+      
+         
+          <mat-header-row *matHeaderRowDef="displayedColumns"></mat-header-row>
+          <mat-row *matRowDef="let row; columns: displayedColumns;"></mat-row>
+        </mat-table>
+        <mat-paginator [pageSizeOptions]="[5, 10, 25, 100]" [pageSize]="5" [pageIndex]="0" showFirstLastButtons></mat-paginator>
+      </div>
+      
+      </div>
+    </div>

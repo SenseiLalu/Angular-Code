@@ -1,0 +1,88 @@
+.one{
+    background-color: #f2f3f7;;
+    height: 100%;
+    /* width: 100%; */
+    /* padding-top: 5%; */
+}
+.example-container {
+    display: flex;
+    flex-direction: column;
+    min-width: 300px;
+    
+  }
+  
+  .example-header {
+    min-height: 100px;
+    padding: 8px 24px 0;
+  }
+  
+  .mat-form-field {
+    font-size: 14px;
+    width: 100%;
+  }
+  
+  .mat-table {
+    overflow: auto;
+    max-height: 500px;
+    
+  }
+  .example-header button{
+    
+    width: 19%;
+    margin-left: 80%;
+    background-color: #545181;
+    font-family:  Raleway, sans-serif;;
+}
+.styled-table {
+  border-collapse: collapse;
+  margin: 25px 0;
+  width: 100%;
+  font-size: 0.9em;
+  font-family: sans-serif;
+  min-width: 400px;
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.15);
+  margin-bottom: 7%;
+}
+.styled-table thead tr {
+  background-color: #009879;
+  color: #ffffff;
+  text-align: left;
+}
+.styled-table th,
+.styled-table td {
+    padding: 12px 15px;
+}
+.styled-table tbody tr {
+  border-bottom: 1px solid #dddddd;
+}
+
+.styled-table tbody tr:nth-of-type(even) {
+  background-color: #f3f3f3;
+}
+
+.styled-table tbody tr:last-of-type {
+  border-bottom: 2px solid #009879;
+}
+.styled-table tbody tr.active-row {
+  font-weight: bold;
+  color: #009879;
+}
+/* .first button{
+margin-left: 80%;
+} */
+.first button{
+  /* margin-left: 76.5%; */
+  
+  width: 22%;
+  height: 35px;
+ text-align: left;
+  background-color: #008be1;
+}
+.second{
+  margin-left: 70%;
+  position: relative;
+  top: 20px;
+}
+.second .button{
+  box-shadow: 5px 5px 10px grey;
+}

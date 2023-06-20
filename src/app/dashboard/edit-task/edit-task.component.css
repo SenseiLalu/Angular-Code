@@ -1,0 +1,456 @@
+@import url("https://fonts.googleapis.com/css2?family=Roboto:wght@400;500&display=swap");
+body {
+	box-sizing: border-box;
+	background: #f2f2f2;
+	font-family: "Roboto", sans-serif;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+}
+
+.container {
+	background: #fff;
+	width: 100%;
+	padding: 1rem;
+}
+
+.title {
+	font-size: 24px;
+	line-height: 28px;
+	font-weight: bold;
+	color: #374151;
+	padding-bottom: 11px;
+	border-bottom: 1px solid #d7dbdf;
+}
+
+.form-group {
+	margin-top: 25px;
+	display: flex;
+	flex-direction: column;
+}
+
+.textarea-group label,
+.form-group label {
+	color: #374151;
+	font-size: 16px;
+	line-height: 19px;
+	margin-bottom: 10px;
+}
+
+.form-group [type],
+.textarea-group textarea {
+	border: 1px solid #d2d6db;
+	border-radius: 6px;
+	padding: 15px;
+}
+.form-group [type]:hover,
+.textarea-group textarea:hover {
+	border-color: #a8afb9;
+}
+.form-group [type]:focus,
+.textarea-group textarea:focus {
+	border-color: #5850eb;
+}
+
+.textarea-group {
+	margin-top: 24px;
+}
+
+.textarea-group textarea {
+	resize: none;
+	width: 100%;
+	margin-top: 10px;
+	height: calc(100% - 59px);
+}
+
+.checkbox-group {
+	margin-top: 25px;
+}
+
+.checkbox-group label {
+	display: flex;
+}
+
+.checkbox-group label::before {
+	content: "\0020";
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	width: 16px;
+	height: 16px;
+	margin-right: 8px;
+	border: 1px solid #d2d6db;
+	border-radius: 6px;
+	transition: background 0.1s ease-in;
+}
+
+.checkbox-group input[type="checkbox"] {
+	/* ici on ne doit pas mettre de display: none afin de pouvoir "tabber" */
+	position: absolute;
+	width: 1px;
+	height: 1px;
+	padding: 0;
+	margin: -1px;
+	overflow: hidden;
+	clip: rect(0, 0, 0, 0);
+	border: 0;
+}
+.checkbox-group input[type="checkbox"]:focus + label:before {
+	border-color: #5850eb;
+}
+.checkbox-group input[type="checkbox"]:checked + label:before {
+	color: #fff;
+	content: "\2713";
+	background: #5850eb;
+	border-color: #5850eb;
+}
+
+.button {
+	font-weight: bold;
+	line-height: 19px;
+	background: #5850eb;
+	border: none;
+	padding: 15px 25px;
+	border-radius: 6px;
+	color: white;
+	width: 100%;
+	margin-top: 24px;
+}
+.button:hover {
+	background: #6e67ee;
+}
+.button:focus {
+	background: #4239e8;
+}
+
+@media screen and (min-width: 768px) {
+	body {
+		align-items: center;
+		justify-content: center;
+	}
+
+	.container {
+		margin: 2rem;
+		box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.1);
+		border-radius: 4px;
+		max-width: 32rem;
+		padding: 2rem;
+	}
+}
+@media screen and (min-width: 1024px) {
+	.container {
+		max-width: 80%;
+		width: 100%;
+	}
+
+	.checkboxes {
+		display: flex;
+	}
+	.checkboxes > :not(:first-child) {
+		margin-left: 1rem;
+	}
+
+	.grid {
+		display: grid;
+		grid-gap: 24px;
+		grid-template-columns: 1fr 1fr 1fr;
+		grid-auto-rows: 1fr;
+	}
+
+	.email-group {
+		grid-column: 1;
+		grid-row: 2;
+	}
+
+	.phone-group {
+		grid-column: 2;
+		grid-row: 2;
+	}
+
+	.textarea-group {
+		grid-column: 2;
+		grid-row: span 1;
+		margin-right: 2rem;
+	}
+
+	.button-container {
+		text-align: right;
+	}
+
+	.button {
+		/* bon, bon, bon
+		c'est pas tout mais j'ai faim moi ^^
+		*/
+		width: auto;
+	}
+}
+body {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background: #23b499;
+    font-family: 'Open Sans', sans-serif;
+    color: #fff;
+ }
+ select {
+    -webkit-appearance:none;
+    -moz-appearance:none;
+    -ms-appearance:none;
+    appearance:none;
+    outline:#3aadad;
+    box-shadow:#374151;
+    border:#000000;
+    background: #e9e6e6;
+    background-image: none;
+    flex: 1;
+    padding: 0 .5em;
+    color:rgb(0, 0, 0);
+    cursor:pointer;
+    font-size: 1em;
+    font-family: 'Open Sans', sans-serif;
+ }
+ select::-ms-expand {
+    display: none;
+ }
+ .select {
+    position: relative;
+    display: flex;
+    width: 20em;
+    height: 3em;
+    line-height: 3;
+    background: #ffffff;
+    overflow: hidden;
+    border-radius: .25em;
+ }
+ .select::after {
+    content: '\25BC';
+    position: absolute;
+    top: 0;
+    right: 0;
+    padding: 0 1em;
+    background: #9c8f8f;
+    cursor:pointer;
+    pointer-events:none;
+    transition:.25s all ease;
+ }
+ .select:hover::after {
+    color: #23b499;
+ }
+ .comment-list {
+	/* margin-top: 20px; */
+	padding: 20px;
+	background-color: #f8f8f8;
+	border-radius: 20px;
+	box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.1);
+  }
+  
+  .comment-list h3 {
+	font-size: 20px;
+	font-weight: bold;
+	margin-bottom: 10px;
+  }
+  
+  .comment-list ul {
+	list-style: none;
+	margin: 0;
+	padding: 0;
+  }
+  
+  .comment-list li {
+	background-color: #fff;
+	border-radius: 5px;
+	padding: 15px;
+	margin-bottom: 15px;
+	box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.1);
+  }
+  
+  .comment-list li:last-child {
+	margin-bottom: 0;
+  }
+  
+  .comment-list li p {
+	margin: 0;
+	font-size: 16px;
+  }
+  
+  .comment-list li small {
+	font-size: 12px;
+	color: #999;
+  }
+  
+  .comment-list li small:before {
+	content: "•";
+	margin-right: 5px;
+  }
+
+
+
+  .comment-box {
+	margin-top: 20px;
+  }
+  
+  .comment-box form {
+	display: flex;
+	flex-direction: column;
+	margin-bottom: 20px;
+  }
+  
+  .comment-box textarea {
+	height: 30px;
+	width: 90%;
+	resize: none;
+	border: 1px solid #d1c0c0;
+	border-radius: 5px;
+	padding: 10px;
+	font-size: 16px;
+	margin-bottom: 10px;
+	background-color: #fcfcfc;
+  }
+  
+  .comment-box button[type="submit"] {
+	background-color: #007bff;
+	color: #fff;
+	border: none;
+	border-radius: 5px;
+	padding: 10px 15px;
+	font-size: 16px;
+	cursor: pointer;
+	transition: all 0.3s ease;
+  }
+  
+  .comment-box button[type="submit"]:hover {
+	background-color: #0062cc;
+  }
+  #comments-box {
+	height: 300px;
+	overflow: auto;
+  }
+  #comments-box ul {
+	padding: 0;
+	margin: 0;
+	list-style: none;
+  }
+  
+  #comments-box li {
+	padding: 10px;
+	border-bottom: 1px solid #ccc;
+  }
+
+.comments-container::-webkit-scrollbar {
+	width: 10px;
+  }
+  .comments-container::-webkit-scrollbar-track {
+	background: #f1f1f1;
+  }
+  .comments-container::-webkit-scrollbar-thumb {
+	background: #888;
+  }
+  .comments-container::-webkit-scrollbar-thumb:hover {
+	background: #555;
+  }
+  
+.comment {
+	padding: 10px;
+	border: 1px solid #ccc;
+	margin-bottom: 10px;
+  }
+  .comment h3 {
+	margin: 0;
+	font-size: 16px;
+	font-weight: bold;
+  }
+  .comment p {
+	margin: 0;
+	font-size: 14px;
+  }
+   .comments-container {
+	height: 400px; /* set the height to whatever you prefer */
+	overflow: scroll;
+	/* margin-left: 50%; */
+	
+  }
+  .comments-container {
+	background-color: #f9f9f9;
+	border: 1px solid #ddd;
+	padding: 20px;
+	/* padding-left: 40%; */
+  }
+  
+  .comment-list {
+	list-style: none;
+	margin: 0;
+	padding: 0;
+  }
+  
+  .comment {
+	margin-bottom: 20px;
+  }
+  
+  .comment-author {
+	display: flex;
+	align-items: center;
+	margin-bottom: 10px;
+  }
+  
+  .avatar {
+	border-radius: 50%;
+	width: 50px;
+	height: 50px;
+	margin-right: 10px;
+  }
+  
+  .name {
+	font-weight: bold;
+  }
+  
+  .comment-text {
+	margin-left: 60px;
+  }
+  
+  .date {
+	color: #aaa;
+	font-size: 14px;
+  }
+  .comment {
+	display: flex;
+	align-items: flex-start;
+	margin-bottom: 10px;
+  }
+  
+  .user-info {
+	display: flex;
+	align-items: center;
+	margin-right: 10px;
+  }
+  
+  .user-icon {
+	width: 20px;
+	height: 20px;
+	margin-right: 5px;
+  }
+  
+  .username {
+	font-weight: bold;
+  }
+  
+  .comment-text {
+	flex-grow: 1;
+  }
+ 
+  .button-container .button{
+	background-color: #008be1;
+	height: 40px;
+	width: 85px;
+	font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+	box-shadow: 5px 5px 10px grey; 
+	
+  }
+  .comments-container .comment-box button{
+	margin-left: 93%;
+	bottom: 63px;
+	/* height: 70px;
+	width: 10%; */
+	
+  }

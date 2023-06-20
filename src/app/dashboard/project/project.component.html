@@ -1,0 +1,56 @@
+<div class="one">
+  <div  class="containers" >
+      <h1 style="text-align: center;font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif; position:relative; right:444px; top: 55px; font-weight: bold; color: gray;"> PROJECT DETAILS </h1>  </div>
+      <div class="first"  style="padding: -40px; margin: -40px;">
+        <div  style="margin-bottom: 20px;" class="second">
+          <button style="font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;" mat-raised-button color="primary" routerLink="/home/add-project">ADD NEW</button> 
+          &nbsp; &nbsp;
+          <button style="font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;" mat-raised-button color="primary" routerLink="/home/assign-project">ASSIGNED PROJECT</button>
+          
+          &nbsp; &nbsp;
+        <mat-form-field style="height: 60px;">
+          <input style="height: 15px;" matInput (keyup)="applyFilter($event)"  placeholder="Filter" >
+        </mat-form-field>
+      </div>
+        <!-- <button mat-raised-button color="primary" routerLink="/home/add-project">Add New Projects</button><br><br>
+      <div class="example-header"><br>
+
+        <div class="first">
+          <button mat-raised-button color="primary" routerLink="/home/assigne-project">Assigne Project</button><br><br>
+        
+  
+        <mat-form-field style="text-align: left; padding-left: 80%; height: 1%;">
+          <input matInput (keyup)="applyFilter($event)"  placeholder="Filter" >
+        </mat-form-field>
+      -->
+      <div class="example-header" style="margin-left: 40px; margin-right: -15px;"><br>
+      <mat-table #table [dataSource]="dataSource" class="mat-elevation-z8">
+    
+        <!-- Position Column -->
+        <ng-container matColumnDef="id">
+          <mat-header-cell *matHeaderCellDef> Id </mat-header-cell>
+          <mat-cell *matCellDef="let element"> {{element.projectId}} </mat-cell>
+        </ng-container>
+    
+        <!-- Name Column -->
+        <ng-container matColumnDef="name">
+          <mat-header-cell *matHeaderCellDef> Name </mat-header-cell>
+          <mat-cell *matCellDef="let element"> {{element.projectName}} </mat-cell>
+        </ng-container>
+    
+        <!-- Weight Column -->
+        <ng-container matColumnDef="isActive">
+          <mat-header-cell *matHeaderCellDef> isActive</mat-header-cell>
+          <mat-cell *matCellDef="let element"> {{element.active}} </mat-cell>
+        </ng-container>
+    
+       
+        <mat-header-row *matHeaderRowDef="displayedColumns"></mat-header-row>
+        <mat-row *matRowDef="let row; columns: displayedColumns;"></mat-row>
+      </mat-table>
+      <mat-paginator [pageSizeOptions]="[5, 10, 25, 100]" [pageSize]="5" [pageIndex]="0" showFirstLastButtons></mat-paginator>
+    </div>
+    
+    </div>
+  </div>
+  

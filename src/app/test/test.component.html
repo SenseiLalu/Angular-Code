@@ -1,0 +1,10 @@
+<p>test works!</p>
+<p-dialog header="Description" [style]="[{'max-width':'30vw'},{'max-width':'75vh'}]" (onShow)="loadDialogData()">
+    <mat-card #panel>
+      <mat-card-title>Description</mat-card-title>
+      <mat-card-content id="descBox">
+        <div #dialog></div>
+        <!-- task description is appended over here  -->
+      </mat-card-content>
+    </mat-card>
+</p-dialog>

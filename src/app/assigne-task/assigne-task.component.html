@@ -1,0 +1,44 @@
+<div class="container">
+
+	<h1  class="title" style="font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;font-weight: bold; color: gray;" >Assign Project</h1>
+<form (ngSubmit)="assignProject()">
+	<div class="grid">
+		<div class="form-group a">
+			<label for="name">Projects</label>
+			<select
+			[(ngModel)]="selectedProjectId"
+			 name="title" type="text" style="background-color: white;">
+			 <option value="">Select</option>
+            <option *ngFor="let element of projects" [value]="element.projectId">{{element.projectName}}</option>
+			</select>
+		</div>
+    <br>
+
+		<div class="form-group b">
+      
+		</div>
+
+		<form (ngSubmit)="assignProject()">
+		<div class="form-group email-group">
+	  <label for="name">Employee</label>
+			<select
+			[(ngModel)]="selectedUserId"
+			 name="title" type="text" style="background-color: white;">
+			 <option value="">Select</option>
+			 <option  *ngFor="let element of elements" [value]="element.userId">{{element.username}}</option>
+			</select>
+		</div>
+	</form>
+		<div class="form-group phone-group">
+     
+    </div>
+		</div>
+
+		
+
+	<div class="checkboxes">
+
+    <button  type="submit" class="button">Save</button>
+	</div>
+</form>
+</div>

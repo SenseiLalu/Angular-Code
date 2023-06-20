@@ -1,0 +1,101 @@
+
+<div class="container">
+	<form (ngSubmit)="submitTheForm()" method="post">
+	<div class="button-container">
+		<button type="submit" class="button">Save</button>
+	</div>
+
+	<h1 class="title" style="font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif; position:relative; right:10px; bottom: 30px; font-weight: bold; color: gray;">Add Task</h1>
+
+	<div  class="grid">
+		<div class="form-group a">
+			<label for="name">Title</label>
+			<input
+			[(ngModel)]="data.taskName" [ngModelOptions] = "{standalone: true}"
+			id="name" type="text">
+		</div>
+	
+
+		<div  class="form-group a">
+			<label  for="first-name">Category</label>
+			<select
+			[(ngModel)]="data.taskCategoryId" [ngModelOptions] = "{standalone: true}" name="format"
+			 id="first-name" type="text" style="background-color: white;">
+			 <option value="">Select</option>
+			 <option *ngFor ="let element of elements2" [value]="element.taskCategoryId">
+				{{element.taskCategoryDescription}}
+			  </option>
+		   </select>
+			<mat-icon style="position:relative;  bottom: 35px; left: 250px;">arrow_drop_down</mat-icon>
+		</div>
+
+		
+
+
+		<div  class="form-group email-group">
+			<label  for="first-name">Assigned To</label>
+			<select
+			[(ngModel)]="data.assignedDto" [ngModelOptions] = "{standalone: true}" name="format"
+			 id="first-name" type="text" style="background-color: white;">
+			 <option value="">Select</option>
+			 <option *ngFor ="let element of elements" [value]="element.userId">
+				{{element.username}}
+			  </option>
+		   </select>
+			<mat-icon style="position:relative;  bottom: 35px; left: 250px;">arrow_drop_down</mat-icon>
+		</div>
+
+
+		<div  class="form-group phone-group">
+			<label  for="first-name">Status</label>
+			<select
+			[(ngModel)]="data.statusId" [ngModelOptions] = "{standalone: true}" name="format"
+			 id="first-name" type="text" style="background-color: white;">
+			 <option value="">Select</option>
+			 <option *ngFor ="let element of elements1" [value]="element.statusId">
+				{{element.description}}
+			  </option>
+		   </select>
+			<mat-icon style="position:relative;  bottom: 35px; left: 250px;">arrow_drop_down</mat-icon>
+		</div>
+
+
+
+		<div class="textarea-group">
+			<label for="bio">Description</label>
+			<textarea id="bio" [(ngModel)]="data.longDescription" [ngModelOptions] = "{standalone: true}"></textarea>
+		</div>
+
+		<div class="form-group">
+			<label for="address">Start Date</label>
+			<input id="address" type="date" [(ngModel)]="data.assigenedDate" [ngModelOptions] = "{standalone: true}">
+		</div>
+
+		<div class="form-group">
+			<label for="city">End Date</label>
+			<input id="city" type="date"[(ngModel)]="data.deuDate" [ngModelOptions] = "{standalone: true}" >
+		</div>
+		
+	
+
+		<div  class="form-group">
+			<label  for="first-name">Project</label>
+			<select
+			[(ngModel)]="data.projectId" [ngModelOptions] = "{standalone: true}" name="format"
+			 id="first-name" type="text" style="background-color: white;">
+			 <option value="">Select</option>
+			 <option *ngFor ="let element of projects" [value]="element.projectId">
+				{{element.projectName}}
+			  </option>
+		   </select>
+			<mat-icon style="position:relative;  bottom: 35px; left: 250px;">arrow_drop_down</mat-icon>
+		</div>
+		 
+
+	
+	<!-- <div class="checkboxes">
+
+
+	</div> -->
+
+</div>
